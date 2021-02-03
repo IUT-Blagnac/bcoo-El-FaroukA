@@ -1,4 +1,4 @@
-public static void Point() {
+public class Point() {
     float x;
     float y;
    
