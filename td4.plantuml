@@ -9,7 +9,12 @@ usecase rh as (récapitulatif des horaires)
 r <|--rsc
 r <|--rmp
 
-actor Enseignant
-actor Etudiant
+Enseignant -- r
+Enseignant -- ps
+Etudiant -- ps
+
+actor Enseignant 
+actor Etudiant 
+actor EnseignantRes
 
 @enduml
