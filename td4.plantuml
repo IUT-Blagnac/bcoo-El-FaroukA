@@ -8,6 +8,7 @@ usecase rh as (récapitulatif des horaires)
 
 r <|--rsc
 r <|--rmp
+Enseignant <|-- EnseignantRes
 
 Enseignant -- r
 Enseignant -- ps
