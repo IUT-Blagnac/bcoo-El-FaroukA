@@ -1,0 +1,15 @@
+@startuml
+
+usecase  r as (Réservation)
+usecase  rsc as (réservation \n des salles de cours)
+usecase rmp as (réservation \n du matériel pédagogique)
+usecase ps as(planning des salles)
+usecase rh as (récapitulatif des horaires)
+
+r <|--rsc
+r <|--rmp
+
+actor Enseignant
+actor Etudiant
+
+@enduml
