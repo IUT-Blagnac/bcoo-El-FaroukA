@@ -5,18 +5,35 @@ hide footbox
 
 participant A as ":Client"
 participant B as ":Caisse"
+participant C as ":Caissier"
+participant D as ":Article"
+participant E as ":Tapis"
 
-A -> B: step
 
+A -> B: arrive
 activate B
-B -> C: step
 
-activate C
-C --> C: action
-C -> B: step
-deactivate C
+A -> E : deposerArticles
+activate E
 
-B -> A: step
-deactivate B
+loop "Pour chaque article"
+  C -> E: prendreArticle
+  C -> B: scanne
+  activate C
+
+  opt "qté > 1"
+    C -> B: saisir(qté)
+  end
+
+  B --> A: prix et libellé
+  B --> C: prix et libellé
+end
+
+C -> B:fin
+
+  B --> A: montant total
+  B --> C: montant total  
+  
+
 
 @enduml
