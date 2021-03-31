@@ -20,13 +20,20 @@ loop "Pour chaque article"
   C -> E: prendreArticle
   C -> B: scanne
   activate C
-
+  
+  par
+  B --> D: getPrix()
+  B --> D: getLibelle()
+  
+  else
   opt "qté > 1"
     C -> B: saisir(qté)
   end
-
+  end
   B --> A: prix et libellé
   B --> C: prix et libellé
+
+  B -> B: montantTotal += prix * qté
 end
 
 C -> B:fin
@@ -34,6 +41,7 @@ C -> B:fin
   B --> A: montant total
   B --> C: montant total  
   
+
 
 
 @enduml
