@@ -69,6 +69,7 @@ class Realiser {
 class Executer {
   ordre
   dureeMoy
+  getDureeMoy()
 }
 
 '------ Associations
