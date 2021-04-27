@@ -13,6 +13,8 @@ class Qualification {
   code
   libelle
   tauxHoraire
+  getTH()
+  getArtisans()
 }
 
 class Artisan {
@@ -20,12 +22,14 @@ class Artisan {
   nom
   adresse
   tph
+  getPayeArtisan( c: Chantier)
 }
 
 class Tache {
   code
   designation
   majAvancement(date, duree, Tache, Chantier)
+  getQualif()
 }
 
 class Chantier {
@@ -48,6 +52,8 @@ class Modele {
   prixVenteM
   prixRevientM
   dureeConstructionM
+  getDureeConstruction()
+  getArtisanQualifies()
 }
 
 '------ Classes Associations
